@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'myapp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'contact_saver',
+        'NAME': 'contact_app',
         'USER': 'postgres',
         'PASSWORD': 'Scofield',
         'HOST': '127.0.0.1',

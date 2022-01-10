@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Contact(models.Model):
-    users = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    users = models.ForeignKey(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     phone_no = models.CharField(max_length=20)
