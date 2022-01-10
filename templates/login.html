@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<section>
+    <div class="row my-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="p-4 bg-light">
+                <h3>Log In</h3>
+                click here if you don't have an account <a href="register" class="text-decoration-none mt-4">Sign Up</a>
+                <hr class="my-4">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <form method="POST">{% csrf_token %}
+                    <p>Username:</p>
+                    <input type="text" name="username" class="form-control">
+                    <p>Password:</p>
+                    <input type="text" name="password" class="form-control">
+                    <input type="submit" value="log in" class="mt-4 btn btn-primary btn-block">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<section>
+    <div class="row mt-5">
+        <div class="col-md-8 offset-md-2">
+            <div class="p-4 bg-light">
+                <h3>
+                    Contact List
+                </h3>
+                <hr class="mt-4">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for model in models %}
+                    <tr>
+                        <td>{{ model.first_name }}</td>
+                        <td>{{ model.last_name }}</td>
+                        <td>{{ model.phone_no }}</td>
+                        <td>
+                            <a href="update/{{ model.id }}" class="btn btn-warning">Edit</a>
+                            <a href="delete/{{ model.id }}" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<section>
+    <div class="container">
+        <h3><b>Welcome, {{ user.username }}</b></h3>
+    </div>
+</section>
+<section>
+    <div class="container mt-5">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Scofield Application</h1>
+            <p class="lead">Okay, so what this app does is that you can saved, see list, edit and delete contact.</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item active" aria-disabled="true">Contact Saver</li>
+            <a href="create" class="text-decoration-none"><li class="list-group-item">Create</li></a>
+            <a href="list" class="text-decoration-none"><li class="list-group-item">Contact List</li></a>
+        </ul>
+    </div>
+</section>
+{% endblock %}
